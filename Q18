@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[6] = {5, 10, 15, 20, 25, 30};
+    int key, low = 0, high = 5, mid;
+    bool found = false;
+
+    cout << "Enter integer to search: ";
+    cin >> key;
+
+    while (low <= high) {
+        mid = low + (high - low) / 2;
+
+        if (a[mid] == key) {
+            cout << "Integer found at position " << mid + 1;
+            found = true;
+            break;
+        }
+        else if (a[mid] < key) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+
+    if (!found)
+        cout << "Integer not found";
+
+    return 0;
+}
