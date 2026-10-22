@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[7] = {10, 20, 10, 30, 10, 40, 20};
+    int key, count = 0;
+
+    cout << "Enter element to count: ";
+    cin >> key;
+
+    for (int i = 0; i < 7; i++) {
+        if (a[i] == key)
+            count++;
+    }
+
+    cout << "Occurrences = " << count;
+
+    return 0;
+}
