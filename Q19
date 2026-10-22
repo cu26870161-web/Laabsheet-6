@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float a[5] = {1.1, 2.2, 3.3, 4.4, 5.5};
+    float key;
+    int low = 0, high = 4, mid;
+    bool found = false;
+
+    cout << "Enter floating-point number: ";
+    cin >> key;
+
+    while (low <= high) {
+        mid = low + (high - low) / 2;
+
+        if (a[mid] == key) {
+            cout << "Number found at position " << mid + 1;
+            found = true;
+            break;
+        }
+        else if (a[mid] < key) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+
+    if (!found)
+        cout << "Number not found";
+
+    return 0;
+}
