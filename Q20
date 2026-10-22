@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[6] = {10, 20, 30, 40, 50, 60};
+    int low = 0, high = 5, mid;
+    int largest = a[0];
+
+    while (low <= high) {
+        mid = low + (high - low) / 2;
+
+        if (a[mid] > largest)
+            largest = a[mid];
+
+        if (mid < 5)
+            low = mid + 1;
+        else
+            break;
+    }
+
+    cout << "Largest element = " << largest;
+
+    return 0;
+}
